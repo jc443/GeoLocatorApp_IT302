@@ -6,17 +6,12 @@
 <script type="text/javascript" charset="utf-8">
 var count = 0;
 document.addEventListener("deviceready",onDeviceReady,false);
-
-
 var watchID= null;
-
-
-
 function onDeviceReady(){
 	var options = {timeout: 30000};
 	watchID = navigator.geolocation.watchPosition(onGeolocaionSuccess, onGeolocationError, options);
-
-
+	
+}
 function onGeolocaionSuccess(position){
 	count = count + 1;
 	var element = document.getElementById('geolocation');
@@ -32,7 +27,6 @@ function onGeolocaionSuccess(position){
 						'Timestamp: '	+	position.timesamp + '<br />'+
 						'</h1>';
 }
-
 function onGeolocationError(){
 	alert('code: '	+error.code	+ '\n'+
 		'message: ' + error.message + '\n');
@@ -46,7 +40,7 @@ function onGeolocationError(){
 
 
 <body>
-	<button onclick="onDeviceReady();">popup</button> <br><br>
+	<button onclick= "onDeviceReady()">popup</button> <br><br>
 
 	<div id="geolocation">
 		<h1>
