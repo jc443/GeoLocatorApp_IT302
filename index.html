@@ -6,8 +6,13 @@
 <script type="text/javascript" charset="utf-8">
 var count = 0;
 document.addEventListener("deviceready",onDeviceReady,false);
+document.addEventListener("backbutton", onBackKeyDown, false);
 
 var watchID= null;
+
+function onBackKeyDown() {
+	alert('You will lose all of your information...');
+}
 
 function onDeviceReady(){
 	var options = {timeout: 30000};
