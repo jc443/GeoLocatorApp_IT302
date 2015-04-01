@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+
+<script type="/text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+var count = 0;
+document.addEventListener("deviceready",onDeviceReady,false);
+
+var watchID= null;
+
+function onDeviceReady(){
+	var options = {timeout: 30000};
+	watchID = navigator.geolocation.watchPosition(onGeolocaionSuccess, onGeolocationError, options);
+	
+}
+
+function onGeolocaionSuccess(position){
+	count = count + 1;
+	var element = document.getElementById('geolocation');
+	element.innerHTML = '<h1>' +
+						'Count is: '	+	count	+ '<br />'+
+						'Latitude: '	+	position.coords.latitude	+ '<br />'+
+						'Longitude: '	+	position.coords.longitude	+ '<br />'+
+						'Altitude: '	+	position.coords.altitude	+ '<br />'+
+						'Accuracy: '	+	position.coords.accuracy	+ '<br />'+
+						'Altitude Accuracy: '	+	position.coords.altitudeAccuracy	+ '<br />'+
+						'Heading: '	+	position.coords.heading	+ '<br />'+
+						'Speed: '	+ position.coords.speed	+ '<br />'+
+						'Timestamp: '	+	position.timesamp + '<br />'+
+						'</h1>';
+}
+
+function onGeolocationError(){
+	alert('code: '	+error.code	+ '\n'+
+		'message: ' + error.message + '\n');
+}
+</script>
+
+<head>
+
+	<title>Capture Photo</title>
+</head>
+
+
+<body>
+	<button onclick= "alert('Here I am');">popup</button> <br><br>
+
+	<div id="geolocation">
+		<h1>
+			Latitude and Longitude for geolocation goes here.
+		</h1>
+	</div>
+</body>
+</html>
