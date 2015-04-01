@@ -17,7 +17,7 @@ function onDeviceReady(){
 	watchID = navigator.geolocation.watchPosition(onGeolocaionSuccess, onGeolocationError, options);
 	document.addEventListener("backbutton", function(),{
 		alert('You will lose all of your information...');
-	}
+	});
 
 function onGeolocaionSuccess(position){
 	count = count + 1;
