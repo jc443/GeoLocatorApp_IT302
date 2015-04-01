@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns	= "http://www.w3.org/ns/widgets"
+		xmlns:gap = "http://phonegap.com/ns/1.0"
+		id = "edu.njit.joecan.phonegap02"
+		version = "1.0.0">
+		
+		<name>GeoLocator</name>
+		<icon src="icon.png" />
+		
+		<preference name="phonegap-version" value="3.6.3" />
+</widget>	
