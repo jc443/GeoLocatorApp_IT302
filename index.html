@@ -15,12 +15,7 @@ var watchID= null;
 function onDeviceReady(){
 	var options = {timeout: 30000};
 	watchID = navigator.geolocation.watchPosition(onGeolocaionSuccess, onGeolocationError, options);
-	document.addEventListener("backbutton", onBackKeyDown, false);
 
-function onBackKeyDown() {
-   alert('You will lose your info...');
-}
-	});
 
 function onGeolocaionSuccess(position){
 	count = count + 1;
