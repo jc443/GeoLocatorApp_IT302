@@ -14,7 +14,13 @@ function onDeviceReady(){
 	
 }
  function onBackKeyDown() {
-    alert('You will lose all of your data');
+    
+    var r = confirm("You can lose all of your data. . .");
+    if (r == true) {
+        txt = "You exited";
+    } else {
+        
+    }
  	
  }
 function onGeolocaionSuccess(position){
