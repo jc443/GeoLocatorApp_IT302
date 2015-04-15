@@ -8,22 +8,14 @@ var count = 0;
 document.addEventListener("deviceready",onDeviceReady,false);
 var watchID= null;
 function onDeviceReady(){
-	document.addEventListener("backbutton", onBackKeyDown, false);
+	
 	var options = {timeout: 30000};
 	watchID = navigator.geolocation.watchPosition(onGeolocaionSuccess, onGeolocationError, options);
 	
 }
- function onBackKeyDown() {
-    
-    var r = confirm("You can lose all of your data. . .");
-    if (r == true) {
-        txt = "You exited";
-    } else {
-        
-    }
- 	
- }
+ 
 function onGeolocaionSuccess(position){
+	document.addEventListener("backbutton", onBackKeyDown, false);
 	count = count + 1;
 	var element = document.getElementById('geolocation');
 	element.innerHTML = '<h1>' +
@@ -38,6 +30,17 @@ function onGeolocaionSuccess(position){
 						'Timestamp: '	+	position.timesamp + '<br />'+
 						'</h1>';
 }
+function onBackKeyDown() {
+    
+    var r = confirm("You can lose all of your data. . .");
+    if (r == true) {
+        txt = "You exited";
+    } else {
+        
+    }
+ 	
+ }
+
 function onGeolocationError(){
 	alert('code: '	+error.code	+ '\n'+
 		'message: ' + error.message + '\n');
