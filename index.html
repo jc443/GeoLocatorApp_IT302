@@ -8,14 +8,14 @@ var count = 0;
 document.addEventListener("deviceready",onDeviceReady,false);
 var watchID= null;
 function onDeviceReady(){
-	
-	var options = {timeout: 30000};
+	document.addEventListener("backbutton", onBackKeyDown, false);
+	var options = {timeout: 4000};
 	watchID = navigator.geolocation.watchPosition(onGeolocaionSuccess, onGeolocationError, options);
 	
 }
  
 function onGeolocaionSuccess(position){
-	document.addEventListener("backbutton", onBackKeyDown, false);
+
 	count = count + 1;
 	var element = document.getElementById('geolocation');
 	element.innerHTML = '<h1>' +
@@ -36,7 +36,7 @@ function onBackKeyDown() {
     if (r == true) {
         txt = "You exited";
     } else {
-        
+        txt= "Returning to the app";
     }
  	
  }
