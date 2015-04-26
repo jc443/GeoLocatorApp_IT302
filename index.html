@@ -11,12 +11,13 @@ function onDeviceReady(){
 	document.addEventListener("backbutton", onBackKeyDown, false);
 	var options = {timeout: 4000};
 	watchID = navigator.geolocation.watchPosition(onGeolocaionSuccess, onGeolocationError, options);
-	checkConnection();
+
 	
 }
  
 function onGeolocaionSuccess(position){
 	document.addEventListener("backbutton", onBackKeyDown, false);
+		checkConnection();
 	count = count + 1;
 	var element = document.getElementById('geolocation');
 	element.innerHTML = '<h1>' +
