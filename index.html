@@ -11,13 +11,14 @@ function onDeviceReady(){
 	document.addEventListener("backbutton", onBackKeyDown, false);
 	var options = {timeout: 4000};
 	watchID = navigator.geolocation.watchPosition(onGeolocaionSuccess, onGeolocationError, options);
+		
 
 	
 }
  
 function onGeolocaionSuccess(position){
 	document.addEventListener("backbutton", onBackKeyDown, false);
-		checkConnection();
+	
 	count = count + 1;
 	var element = document.getElementById('geolocation');
 	element.innerHTML = '<h1>' +
@@ -60,6 +61,7 @@ function checkConnection() {
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
     alert('Connection type: ' + states[networkState]);
+    
 }
 </script>
 
@@ -71,7 +73,7 @@ function checkConnection() {
 
 <body>
 	<button onclick= "onDeviceReady()">popup</button> <br><br>
-
+	<button onclick= "checkConnection()">check conn</button> <br><br>
 	<div id="geolocation">
 		<h1>
 			Latitude and Longitude for geolocation goes here.
